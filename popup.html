@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrankoOFM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container" id="mainApp">
+ 
+    <div class="header">
+      <div class="header-left">
+        <div class="logo">
+          <svg viewBox="0 0 132 132" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M66 0C29.5 0 0 29.5 0 66s29.5 66 66 66 66-29.5 66-66S102.5 0 66 0zm0 20c25.4 0 46 20.6 46 46s-20.6 46-46 46-46-20.6-46-46 20.6-46 46-46zm0 12c-18.8 0-34 15.2-34 34s15.2 34 34 34 34-15.2 34-34-15.2-34-34-34zm22-10.7L66 48.5 44 21.3l-5.7 4.2L60.3 54l-22 29.5 5.7 4.2L66 60.5l22 27.2 5.7-4.2L71.7 54l22-28.5-5.7-4.2z"/>
+          </svg>
+        </div>
+        <div class="header-text">
+          <a href="https://www.youtube.com/@FrankoOFM" target="_blank" class="brand brand-link">FrankoOFM</a>
+          <span class="version">v1.0</span>
+        </div>
+      </div>
+    </div>
+
+   
+    <nav class="bottom-bar">
+      <button class="nav-item active" data-tab="main" title="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </button>
+      <button class="nav-item" data-tab="settings" title="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+    </nav>
+
+  
+    <div class="tab-content active" id="tab-main">
+      <div class="stats-card">
+        <div class="stats-ring">
+          <svg viewBox="0 0 140 140">
+            <defs>
+              <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0095f6"/>
+                <stop offset="100%" stop-color="#00d4ff"/>
+              </linearGradient>
+            </defs>
+            <circle class="ring-bg" cx="70" cy="70" r="65" />
+            <circle class="ring-progress" id="progressRing" cx="70" cy="70" r="65" />
+          </svg>
+          <div class="stats-inner">
+            <div class="stats-numbers">
+              <span class="stat-number" id="progress">0</span>
+              <span class="stat-divider">/</span>
+              <span class="stat-target" id="target">0</span>
+            </div>
+            <span class="stats-sublabel">followed</span>
+          </div>
+        </div>
+      </div>
+
+      <button id="controlBtn" class="btn-control">
+        <span class="btn-text">Start Following</span>
+      </button>
+
+      <div class="quick-stats">
+        <div class="quick-stat">
+          <span class="quick-stat-value" id="delayDisplay">10-15s</span>
+          <span class="quick-stat-label">Delay</span>
+        </div>
+        <div class="quick-stat">
+          <span class="quick-stat-value" id="modeDisplay">Random</span>
+          <span class="quick-stat-label">Mode</span>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="tab-content" id="tab-settings">
+      <div class="setting-section">
+        <div class="section-header">
+          <span class="section-title">Follow Amount</span>
+        </div>
+        <div class="input-group">
+          <div class="input-wrapper">
+            <label class="input-label">Minimum</label>
+            <div class="input-field">
+              <button class="input-btn minus" data-target="minFollow">−</button>
+              <input type="number" id="minFollow" value="15" min="1">
+              <button class="input-btn plus" data-target="minFollow">+</button>
+            </div>
+          </div>
+          <div class="input-separator">
+            <span class="separator-text">to</span>
+          </div>
+          <div class="input-wrapper">
+            <label class="input-label">Maximum</label>
+            <div class="input-field">
+              <button class="input-btn minus" data-target="maxFollow">−</button>
+              <input type="number" id="maxFollow" value="25" min="1">
+              <button class="input-btn plus" data-target="maxFollow">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-section">
+        <div class="section-header">
+          <span class="section-title">Delay (seconds)</span>
+        </div>
+        <div class="input-group">
+          <div class="input-wrapper">
+            <label class="input-label">Min Delay</label>
+            <div class="input-field">
+              <button class="input-btn minus" data-target="minDelay">−</button>
+              <input type="number" id="minDelay" value="10" min="0">
+              <button class="input-btn plus" data-target="minDelay">+</button>
+            </div>
+          </div>
+          <div class="input-separator">
+            <span class="separator-text">to</span>
+          </div>
+          <div class="input-wrapper">
+            <label class="input-label">Max Delay</label>
+            <div class="input-field">
+              <button class="input-btn minus" data-target="maxDelay">−</button>
+              <input type="number" id="maxDelay" value="15" min="0">
+              <button class="input-btn plus" data-target="maxDelay">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-section">
+        <div class="toggle-card">
+          <div class="toggle-info">
+            <span class="toggle-title">Random Selection</span>
+            <span class="toggle-desc">Pick random users instead of sequential order</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="randomMode" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <button class="btn-save" id="saveBtn">Save Settings</button>
+    </div>
+
+    
+    <div class="modal-overlay" id="rateLimitModal">
+      <div class="modal">
+        <div class="modal-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+        </div>
+        <h3 class="modal-title">Rate Limited!</h3>
+        <p class="modal-text">Instagram has detected unusual activity. You need to wait before continuing.</p>
+        <p class="modal-question">Wait 2 minutes and auto-resume?</p>
+        <div class="modal-timer" id="modalTimer"></div>
+        <div class="modal-buttons">
+          <button class="modal-btn cancel" id="rateLimitNo">No, Stop</button>
+          <button class="modal-btn confirm" id="rateLimitYes">Yes, Wait</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
